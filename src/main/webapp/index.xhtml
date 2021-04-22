@@ -10,6 +10,7 @@
 
 <h:body>
   <h:form>
+    <p:remoteCommand name="refresh_form" update="@form" />
 
     <p:panel header="PrimeFaces Hello World Example">
       <h:panelGrid columns="2" cellpadding="4">
@@ -30,13 +31,15 @@
         <h:outputText value="#{ helloWorld.showGreeting() }" />
       </h:panelGrid>
     </p:dialog>
-
-  </h:form>
-  
-  <p:dataTable var="car" value="#{ tableView.cars }">
+    
+    <p:dataTable var="car" value="#{tableView.cars}">
   	<p:column headerText="Cars">
   		<h:outputText value="#{car}" />
   	</p:column>
-  </p:dataTable>
+    </p:dataTable>
+
+  </h:form>
+  
+  
 </h:body>
 </html>
