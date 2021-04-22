@@ -27,10 +27,16 @@
     <p:dialog header="Greeting" widgetVar="greetingDialog"
       modal="true" resizable="false">
       <h:panelGrid id="greeting" columns="1" cellpadding="4">
-        <h:outputText value="#{helloWorld.showGreeting()}" />
+        <h:outputText value="#{ helloWorld.showGreeting() }" />
       </h:panelGrid>
     </p:dialog>
 
   </h:form>
+  
+  <p:dataTable var="car" value="#{ tableView.cars }">
+  	<p:column headerText="Cars">
+  		<h:outputText value="#{car}" />
+  	</p:column>
+  </p:dataTable>
 </h:body>
 </html>
