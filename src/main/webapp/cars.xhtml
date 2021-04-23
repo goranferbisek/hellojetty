@@ -9,43 +9,16 @@
 </h:head>
 
 <h:body>
-  <h:form>
-    <p:remoteCommand name="refresh_form" update="@form" />
-
-    <p:panel header="PrimeFaces Hello World Example">
-      <h:panelGrid columns="2" cellpadding="4">
-        <h:outputText value="First Name: " />
-        <p:inputText value="#{helloWorld.firstName}" />
-
-        <h:outputText value="Last Name: " />
-        <p:inputText value="#{helloWorld.lastName}" />
-
-        <p:commandButton value="Submit" update="greeting"
-          oncomplete="PF('greetingDialog').show()" />
-      </h:panelGrid>
-    </p:panel>
-
-    <p:dialog header="Greeting" widgetVar="greetingDialog"
-      modal="true" resizable="false">
-      <h:panelGrid id="greeting" columns="1" cellpadding="4">
-        <h:outputText value="#{ helloWorld.showGreeting() }" />
-      </h:panelGrid>
-    </p:dialog>
-    
-    <p:dataTable var="car" value="#{tableView.cars}" id="cars">
+  <p:dataTable var="car" value="#{tableView.cars}" id="cars">
   	<p:column headerText="Brand">
   		<h:outputText value="#{car.brand}" />
   	</p:column>
   	<p:column headerText="Model">
   		<h:outputText value="#{car.model}" />
   	</p:column>
-    </p:dataTable>
+  </p:dataTable>
 
-  </h:form>
-  
-  
-  
-  <!-- new car form -->
+
   <h:form>
     <p:dialog header="New car" widgetVar="carDialog" modal="true" resizable="false">
       <h:panelGrid id="greeting" columns="2" cellpadding="4">

@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean
+@ManagedBean(eager = true)
 public class TableView {
 	
 	private String brand;
@@ -30,6 +30,22 @@ public class TableView {
 
 	public void setCars(List<Car> cars) {
 		this.cars = cars;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
 	}
 	
 }
