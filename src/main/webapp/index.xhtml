@@ -32,12 +32,29 @@
       </h:panelGrid>
     </p:dialog>
     
-    <p:dataTable var="car" value="#{tableView.cars}">
-  	<p:column headerText="Cars">
-  		<h:outputText value="#{car}" />
+    <p:dataTable var="car" value="#{tableView.cars}" id="cars">
+  	<p:column headerText="Brand">
+  		<h:outputText value="#{car.brand}" />
+  	</p:column>
+  	<p:column headerText="Model">
+  		<h:outputText value="#{car.model}" />
   	</p:column>
     </p:dataTable>
 
+  </h:form>
+  
+  
+  
+  <!-- new car form -->
+  <h:form>
+    <p:dialog header="New car" widgetVar="carDialog" modal="true" resizable="false">
+      <h:outputText value="Brand: " />
+      <p:inputText value="" />
+      <p:commandButton value="Submit" />
+    </p:dialog>
+    
+    <h:outputText value="Add a new car " />
+    <p:commandButton value="Add" oncomplete="PF('carDialog').show()" />
   </h:form>
   
   
